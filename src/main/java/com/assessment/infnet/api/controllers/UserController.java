@@ -20,13 +20,13 @@ public class UserController {
     }
 
     @ApiOperation(value = "Authenticate an user")
-    @PostMapping(value = "/user")
+    @PostMapping(value = "/login")
     public boolean authenticate(@RequestParam String userName, @RequestParam String password) {
         return userService.authenticate(userName, password);
     }
 
     @ApiOperation(value = "Get a user by userName")
-    @GetMapping(value = "/user/{userName}")
+    @GetMapping(value = "/{userName}")
     public User userExists(@PathVariable String userName) {
         return userService.userExists(userName);
     }
