@@ -14,7 +14,7 @@ public class UserController {
     private UserService userService;
 
     @ApiOperation(value = "Add a new user")
-    @PostMapping(value = "/add")
+    @PostMapping(value = "/")
     public void addUser(@RequestBody User user) {
         userService.addUser(user);
     }
