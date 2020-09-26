@@ -42,7 +42,7 @@ public class Buy {
     }
 
     public String getDate() {
-        return this.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+        return date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
     @Override
