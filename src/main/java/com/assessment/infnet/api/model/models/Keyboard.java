@@ -9,19 +9,6 @@ import javax.persistence.Table;
 @Table(name = "TKeyboard")
 @PrimaryKeyJoinColumn(name = "idProduct")
 public class Keyboard extends Product{
-
     public boolean isRBG;
     public boolean isMechanic;
-
-    @Override
-    public String toString() {
-        return String.format(
-                "K;%s;%.2f;%s;%s;%s",
-                this.description,
-                this.price,
-                this.getReleaseDateString(),
-                this.isRBG,
-                this.isMechanic
-        );
-    }
 }
