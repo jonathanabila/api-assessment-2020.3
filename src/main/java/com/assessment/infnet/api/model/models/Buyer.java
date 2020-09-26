@@ -16,25 +16,19 @@ public class Buyer {
 
     public Buyer() {}
 
-    public Buyer(Integer id, String email, String socialSecurityNumber, LocalDate birth) {
+    public Buyer(Integer id, String email, String socialSecurityNumber) {
         this();
         this.id = id;
         this.email = email;
         this.socialSecurityNumber = socialSecurityNumber;
-        this.birth = birth;
     }
 
-    public String getBirthString() {
-        return birth.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    public String getBirth() {
+        return birth.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "%s;%s;%s",
-                this.email,
-                this.socialSecurityNumber,
-                getBirthString()
-        );
+    public void setBirth(String birth) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.birth = LocalDate.parse(birth, dtf);
     }
 }
