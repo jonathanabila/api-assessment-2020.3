@@ -43,7 +43,12 @@ public abstract class Product {
         this.releaseDate = releaseDate;
     }
 
-    public String getReleaseDateString() {
-        return releaseDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    public String getReleaseDate() {
+        return releaseDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.releaseDate = LocalDate.parse(releaseDate, dtf);
     }
 }
