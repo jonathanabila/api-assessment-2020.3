@@ -44,16 +44,5 @@ public class Buy {
     public String getDate() {
         return date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
-
-    @Override
-    public String toString() {
-        return String.format(
-                "%s;%s;%s;%d",
-                this.getDate(),
-                this.forDelivery,
-                this.buyer,
-                this.items.size()
-        );
-    }
 }
 
